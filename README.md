@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## DroneCo
 
-## Getting Started
+Next.js
 
-First, run the development server:
+- delete API folder
+- /public/assets for my own images
+- delete /styles/Home.module.css
+- index.js delete import styles and boiler plate code
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Tailwind
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- go to tailwind website, and follow instructions for Next.js
+- @layer base (how to apply global styles in tailwind)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## NPM Install List
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+npm install react-icons --save
+npm i react-intersection-observer --save
+npm install react-scroll
+npm i framer-motion
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Notes For Myself
 
-## Learn More
+// const { ref, inView } = useInView({
+// threshold: 0.2,
+// });
+// const animation = useAnimation();
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+// useEffect(() => {
+// if (inView) {
+// animation.start({
+// y: 0,
+// opacity: 1,
+// transition: {
+// type: "spring",
+// duration: 2,
+// },
+// });
+// } else {
+// animation.start({ y: 200, opacity: 0 });
+// }
+// }, [inView]);

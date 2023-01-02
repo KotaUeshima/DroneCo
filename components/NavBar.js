@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Sidebar from "./Sidebar";
+import Link from "next/link";
 
 function NavBar({ scrollUp, topOfPage }) {
   return (
@@ -17,12 +18,14 @@ function NavBar({ scrollUp, topOfPage }) {
         } mx-auto h-full px-2 drop-shadow-xl transition-all ease-in-out duration-300`}
       >
         <div className="pl-4">
-          <Image
-            src="/../public/assets/FinalLogo.png"
-            alt="/"
-            width="35"
-            height="35"
-          />
+          <Link href="/">
+            <Image
+              src="/../public/assets/FinalLogo.png"
+              alt="/"
+              width="35"
+              height="35"
+            />
+          </Link>
         </div>
         <h2 className="text-xl">DroneCo</h2>
         <Sidebar scrollUp={scrollUp} topOfPage={topOfPage} />

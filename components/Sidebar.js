@@ -5,18 +5,21 @@ import { FaLinkedin } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
 
-function Sidebar({ scrollUp, topOfPage }) {
+function Sidebar({ scrollUp }) {
   const [open, setOpen] = useState(false);
   const menuOptions = [
     {
+      id: 1,
       title: "Home",
       link: "/",
     },
     {
+      id: 2,
       title: "Careers",
       link: "/careers",
     },
     {
+      id: 3,
       title: "Partner with Us",
       link: "/",
     },
@@ -57,15 +60,17 @@ function Sidebar({ scrollUp, topOfPage }) {
           open && scrollUp ? "translate-y-0" : "-translate-y-[110%]"
         } rounded-xl ease-in-out duration-700`}
       >
-        {menuOptions.map(({ title, link }) => {
+        {menuOptions.map(({ id, title, link }) => {
           return (
-            <h2
-              className="font-medium text-2xl mt-6 hover:text-droneOrange duration-300"
-              onClick={() => setOpen(!open)}
-              key={title}
-            >
-              <Link href={link}>{title}</Link>
-            </h2>
+            <Link href={link}>
+              <h2
+                key={id}
+                className="font-medium text-2xl mt-6 hover:text-droneOrange duration-300"
+                onClick={() => setOpen(!open)}
+              >
+                {title}
+              </h2>
+            </Link>
           );
         })}
         <div className="flex justify-center space-x-4 mt-6">

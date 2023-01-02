@@ -6,6 +6,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 function Problem() {
   const problems = [
     {
+      id: 1,
       icon: <ImStatsBars size={50} />,
       title: "Carbon Emissions",
       number: "20%",
@@ -14,6 +15,7 @@ function Problem() {
       img: "https://media.istockphoto.com/id/623296954/photo/coal-fired-power-station-silhouette-at-sunset-pocerady-czech-republic.jpg?b=1&s=170667a&w=0&k=20&c=gTri1_dB71KY6PmvQKO2lD8u1FSTxAHpTjPZltdODp0=",
     },
     {
+      id: 2,
       icon: <BiTimeFive size={50} />,
       title: "Traffic Congestion",
       number: "10 Min",
@@ -22,6 +24,7 @@ function Problem() {
       img: "https://t3.ftcdn.net/jpg/02/44/10/34/360_F_244103433_SU95HFaIvOm46LkLot5Hex4DuNTK2WgK.jpg",
     },
     {
+      id: 3,
       icon: <BsCurrencyDollar size={50} />,
       title: "Delivery Costs",
       number: "53%",
@@ -51,7 +54,7 @@ function Problem() {
             {problems.map((problem) => {
               return (
                 <div
-                  key={problem}
+                  key={problem.id}
                   className="flex flex-col items-center p-6 md:w-1/4 bg-white rounded-xl"
                 >
                   <div className="bg-white p-3 rounded-full border-[#191B41]/75">

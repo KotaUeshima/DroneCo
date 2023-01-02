@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-scroll";
 import Image from "next/image";
-import droneGraphic from "../public/assets/dronecoGraphic.png";
 
 function TitleScreen() {
   const [show, setShow] = useState(true);
@@ -33,8 +32,8 @@ function TitleScreen() {
             Partner With DroneCo
           </button>
         </div>
-        <div className="mt-40 max-w-[50vw]">
-          <Image src={droneGraphic} alt="Image Of Drone" />
+        <div className="mt-40 w-[50vw]">
+          <img src="/assets/dronecoGraphic.png" alt="Image Of Drone" />
         </div>
       </div>
       <div className="-mt-10 animate-bounce flex justify-center">

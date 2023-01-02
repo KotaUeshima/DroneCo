@@ -28,14 +28,17 @@ function Footer() {
 
   const quickLinks = [
     {
+      id: 1,
       title: "Contact",
       href: "/contact",
     },
     {
+      id: 2,
       title: "Partner with Us",
       href: "/",
     },
     {
+      id: 3,
       title: "About Us",
       href: "/",
     },
@@ -43,18 +46,22 @@ function Footer() {
 
   const termsLinks = [
     {
+      id: 1,
       title: "Privacy",
       href: "/",
     },
     {
+      id: 2,
       title: "Terms",
       href: "/",
     },
     {
+      id: 3,
       title: "Privacy Terms",
       href: "/",
     },
     {
+      id: 4,
       title: "Terms & Conditions",
       href: "/",
     },
@@ -62,14 +69,17 @@ function Footer() {
 
   const contactUs = [
     {
+      id: 1,
       info: "12345 Inwoord Road, Dallas TX",
       icon: <ImAddressBook size={15} />,
     },
     {
+      id: 2,
       info: "123-456-2312",
       icon: <BsFillTelephoneFill size={15} />,
     },
     {
+      id: 3,
       info: "example@gmail.com",
       icon: <MdEmail size={15} />,
     },
@@ -111,12 +121,12 @@ function Footer() {
             <p className="text-white font-medium border-b-2 border-b-droneOrange">
               Quick Links
             </p>
-            {quickLinks.map(({ title, href }) => {
+            {quickLinks.map(({ id, title, href }) => {
               return (
                 <Link
                   href={href}
                   className="hover:text-droneOrange text-xs ease-linear duration-200"
-                  key={title}
+                  key={id}
                 >
                   {title}
                 </Link>
@@ -127,12 +137,12 @@ function Footer() {
             <p className="text-white font-medium border-b-2 border-b-droneOrange">
               Terms & Conditions
             </p>
-            {termsLinks.map(({ title, href }) => {
+            {termsLinks.map(({ id, title, href }) => {
               return (
                 <Link
                   href={href}
                   className="hover:text-droneOrange text-xs ease-linear duration-200"
-                  key={title}
+                  key={id}
                 >
                   {title}
                 </Link>
@@ -143,9 +153,9 @@ function Footer() {
             <p className="text-white font-medium border-b-2 border-b-droneOrange">
               Contact Us
             </p>
-            {contactUs.map(({ info, icon }) => {
+            {contactUs.map(({ id, info, icon }) => {
               return (
-                <div className="flex flex-row space-x-2">
+                <div key={id} className="flex flex-row space-x-2">
                   {icon}
                   <p className="text-xs">{info}</p>
                 </div>

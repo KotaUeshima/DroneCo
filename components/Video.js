@@ -18,7 +18,6 @@ function Video() {
           ref={ref}
           src={droneImage}
           fill={true}
-          objectFit="cover"
           alt="Image Of Drone"
           className={`rounded-3xl ${
             inView ? "scale-100" : "scale-50"

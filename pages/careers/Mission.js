@@ -9,6 +9,7 @@ function Mission() {
         src={droneImage}
         alt="Picture of Drone"
         quality={100}
+        placeholder="blur"
         priority={true}
         className="h-[75vh] object-cover"
       />

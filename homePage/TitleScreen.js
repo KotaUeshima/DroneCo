@@ -38,6 +38,7 @@ function TitleScreen() {
             src={droneImage}
             alt="Image Of Drone"
             priority={true}
+            quality={100}
             fill={true}
             className="object-contain"
           />

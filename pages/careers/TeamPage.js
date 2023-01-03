@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Kota from "../public/assets/KotaProfile.jpg";
+import Kota from "../../public/assets/KotaProfile.jpg";
 
 function TeamPage() {
   const teamMembers = [

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import droneImage from "../public/assets/yellowDroneInSky.png";
+import droneImage from "../../public/assets/yellowDroneInSky.png";
 
 function Mission() {
   return (

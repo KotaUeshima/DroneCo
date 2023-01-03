@@ -1,11 +1,11 @@
 import Head from "next/head";
-import Problem from "../components/Problem";
-import TitleScreen from "../components/TitleScreen";
-import Video from "../components/Video";
-import Product from "../components/Product";
-import BusinessModel from "../components/BusinessModel";
-import FAQ from "../components/FAQ";
-import ContactUsForm from "../components/ContactUsForm";
+import Problem from "../homePage/Problem";
+import TitleScreen from "../homePage/TitleScreen";
+import Video from "../homePage/Video";
+import Product from "../homePage/Product";
+import BusinessModel from "../homePage/BusinessModel";
+import FAQ from "../homePage/FAQ";
+import ContactUsForm from "../homePage/ContactUsForm";
 
 export default function Home() {
   return (

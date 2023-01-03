@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import droneWithRemote from "../public/assets/droneWithRemote.png";
+import droneWithRemote from "../../public/assets/droneWithRemote.png";
 
 function JoinTeam() {
   const jobs = [

@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FiFastForward } from "react-icons/fi";
 import { BsAppIndicator, BsFlagFill } from "react-icons/bs";
 import { FaRecycle } from "react-icons/fa";
 import { SlEnergy } from "react-icons/sl";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
+import Image from "next/image";
+import dronePlan from "../public/assets/dronePlan.png";
 
 function Product() {
   const benefitsList = [
@@ -48,11 +47,7 @@ function Product() {
         </div>
         <div className="flex flex-col md:flex-row py-16 px-10 mx-auto w-full space-y-12 md:space-y-0">
           <div>
-            <img
-              src="https://thumbs.dreamstime.com/b/drone-concept-d-illustration-drone-concept-d-illustration-blueprint-wire-frame-style-133362929.jpg"
-              alt="/"
-              className=""
-            />
+            <Image src={dronePlan} alt="drone plan" />
           </div>
           <div className="flex flex-col justify-center ml-20 space-y-10 md:w-1/2">
             {benefitsList.map(({ title, icon }) => {

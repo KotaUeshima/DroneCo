@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import building from "../public/assets/building.png";
+import building from "../../public/assets/building.png";
 
 function Values() {
   const values = [

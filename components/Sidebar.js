@@ -62,9 +62,8 @@ function Sidebar({ scrollUp }) {
       >
         {menuOptions.map(({ id, title, link }) => {
           return (
-            <Link href={link}>
+            <Link key={id} href={link}>
               <h2
-                key={id}
                 className="font-medium text-2xl mt-6 hover:text-droneOrange duration-300"
                 onClick={() => setOpen(!open)}
               >

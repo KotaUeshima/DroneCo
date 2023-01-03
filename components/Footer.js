@@ -6,6 +6,7 @@ import { ImAddressBook } from "react-icons/im";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import Link from "next/link";
+import logoWithText from "../public/assets/logoWithText.png";
 
 function Footer() {
   const links = [
@@ -91,8 +92,8 @@ function Footer() {
         <div className="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-2 md:items-start">
           <div>
             <Image
-              src="/../public/assets/FinalLogoAndText.png"
-              alt="/"
+              src={logoWithText}
+              alt="logo with text"
               width="170"
               height="100"
             />

@@ -8,6 +8,8 @@ function Mission() {
       <Image
         src={droneImage}
         alt="Picture of Drone"
+        quality={100}
+        priority={true}
         className="h-[75vh] object-cover"
       />
       <div className="w-[75vw] ml-[12.5vw] -mt-20 px-5 md:px-20 py-10 absolute bg-droneBlue rounded-md">

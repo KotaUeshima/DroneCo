@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import droneWithRemote from "../public/assets/droneWithRemote.png";
 
 function JoinTeam() {
   const jobs = [
@@ -55,11 +56,7 @@ function JoinTeam() {
           </div>
         </div>
         <div className="absolute top-0 right-0 min-h-screen w-[50vw]">
-          <Image
-            src="/../public/assets/droneWithRemote.png"
-            alt="Drone with Remote"
-            fill={true}
-          />
+          <Image src={droneWithRemote} alt="Drone with Remote" fill={true} />
         </div>
       </div>
     </div>

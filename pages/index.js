@@ -6,6 +6,9 @@ import Product from "../homePage/Product";
 import BusinessModel from "../homePage/BusinessModel";
 import FAQ from "../homePage/FAQ";
 import ContactUsForm from "../homePage/ContactUsForm";
+import HowItWorks from "../homePage/HowItWorks";
+import Specs from "../homePage/Specs";
+import Drone from "../homePage/Drone";
 
 export default function Home() {
   return (
@@ -20,10 +23,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TitleScreen />
-      <Product />
-      <Video />
+      {/* <Product /> */}
+      <Drone />
+      {/* <Video /> */}
+      <Specs />
       <Problem />
-      <BusinessModel />
+      {/* <BusinessModel /> */}
+      <HowItWorks />
       <ContactUsForm />
       <FAQ />
     </>

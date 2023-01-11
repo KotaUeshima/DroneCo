@@ -35,7 +35,7 @@ function Problem() {
   ];
 
   return (
-    <div className="w-full mt-20 pb-10 xl:h-[75vh] bg-droneBlue">
+    <div className="w-full pb-10 xl:h-[75vh] bg-droneBlue">
       <div className="max-w-screen-xl px-5 mx-auto text-center">
         <div className="flex flex-col">
           <div className="flex flex:row mt-20 items-center w-full">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-scroll";
 import Image from "next/image";
-import droneImage from "../public/assets/dronecoDrone.png";
+import droneImage from "../public/assets/example.png";
 
 function TitleScreen() {
   const [show, setShow] = useState(true);

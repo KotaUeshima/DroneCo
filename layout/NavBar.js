@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
-import logo from "../public/assets/logo.png";
+import logoWithText from "../public/assets/logoWithText.png";
 
 function NavBar({ scrollUp, topOfPage }) {
   return (
@@ -20,10 +20,9 @@ function NavBar({ scrollUp, topOfPage }) {
       >
         <div className="pl-4">
           <Link href="/">
-            <Image src={logo} alt="logo" width="35" height="35" />
+            <Image src={logoWithText} alt="logo" width="125" />
           </Link>
         </div>
-        <h2 className="text-xl">DroneCo</h2>
         <Sidebar scrollUp={scrollUp} topOfPage={topOfPage} />
       </div>
     </div>

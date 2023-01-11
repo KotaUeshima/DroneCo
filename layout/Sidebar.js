@@ -50,7 +50,7 @@ function Sidebar({ scrollUp }) {
           <GrClose onClick={() => setOpen(!open)} size={30} />
         </div>
       ) : (
-        <div className="pr-4 cursor-pointer">
+        <div className="pr-4 cursor-pointer text-droneBlue">
           <AiOutlineMenu onClick={() => setOpen(!open)} size={30} />
         </div>
       )}

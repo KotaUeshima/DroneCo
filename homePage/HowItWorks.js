@@ -1,10 +1,14 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import first from "../public/assets/first.png";
+import second from "../public/assets/second.png";
+import third from "../public/assets/third.png";
 
 function HowItWorks() {
   const [ref, inView] = useInView({
-    threshold: 0.25,
+    threshold: 0.33,
   });
 
   const [ref2, inView2] = useInView({
@@ -12,10 +16,6 @@ function HowItWorks() {
   });
 
   const [ref3, inView3] = useInView({
-    threshold: 0.5,
-  });
-
-  const [ref4, inView4] = useInView({
     threshold: 0.5,
   });
 
@@ -38,39 +38,11 @@ function HowItWorks() {
   }
 
   if (inView3) {
-    displayLeft = (
-      <AnimatePresence>
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-white"
-        >
-          Third Text
-        </motion.h2>
-      </AnimatePresence>
-    );
-  }
-
-  if (inView4) {
-    displayLeft = (
-      <AnimatePresence>
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-white"
-        >
-          Fourth Text
-        </motion.h2>
-      </AnimatePresence>
-    );
+    displayLeft = <h2 className="text-white">Third Text</h2>;
   }
 
   return (
-    <div className="h-[400vh] w-full flow-root">
+    <div className="h-[300vh] w-full flow-root">
       {inView ? (
         <div className="fixed top-0 left-0 h-[100vh] w-[40vw] bg-droneBlue flex justify-center items-center">
           {displayLeft}
@@ -82,27 +54,42 @@ function HowItWorks() {
           <div className="h-[100vh] w-full flex justify-center items-center">
             <h2 className="text-white">First Text</h2>
           </div>
-          <div className="h-[200vh] w-full"></div>
+          <div className="h-[100vh] w-full"></div>
           <div className="h-[100vh] w-full flex justify-center items-center">
-            <h2 className="text-white">Fourth Text</h2>
+            <h2 className="text-white">Third Text</h2>
           </div>
         </div>
       )}
-      <div
-        ref={ref}
-        className="float-right w-[60vw] h-[400vh] bg-droneOrange text-white"
-      >
+      <div ref={ref} className="float-right w-[60vw] h-[300vh] bg-gray-100">
         <div className="h-[100vh] flex justify-center items-center">
-          <h2>1</h2>
+          <div className="relative h-3/4 w-full">
+            <Image
+              src={first}
+              alt="first"
+              fill={true}
+              className="object-contain"
+            />
+          </div>
         </div>
         <div ref={ref2} className="h-[100vh] flex justify-center items-center">
-          <h2>2</h2>
+          <div className="relative h-3/4 w-full">
+            <Image
+              src={second}
+              alt="second"
+              fill={true}
+              className="object-contain"
+            />
+          </div>
         </div>
         <div ref={ref3} className="h-[100vh] flex justify-center items-center">
-          <h2>3</h2>
-        </div>
-        <div ref={ref4} className="h-[100vh] flex justify-center items-center">
-          <h2>4</h2>
+          <div className="relative h-3/4 w-full">
+            <Image
+              src={third}
+              alt="third"
+              fill={true}
+              className="object-contain"
+            />
+          </div>
         </div>
       </div>
     </div>

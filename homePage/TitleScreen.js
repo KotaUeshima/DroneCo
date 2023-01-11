@@ -46,7 +46,7 @@ function TitleScreen() {
       </div>
       <div className="-mt-10 animate-bounce flex justify-center">
         <Link
-          to="product"
+          to="drone"
           className={`${
             show ? "opacity-100" : "opacity-0"
           } ease-linear duration-500`}

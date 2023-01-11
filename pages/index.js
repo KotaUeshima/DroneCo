@@ -1,14 +1,12 @@
 import Head from "next/head";
 import Problem from "../homePage/Problem";
-import TitleScreen from "../homePage/TitleScreen";
-import Video from "../homePage/Video";
-import Product from "../homePage/Product";
-import BusinessModel from "../homePage/BusinessModel";
 import FAQ from "../homePage/FAQ";
-import ContactUsForm from "../homePage/ContactUsForm";
+import ContactUs from "../homePage/ContactUs";
 import HowItWorks from "../homePage/HowItWorks";
 import Specs from "../homePage/Specs";
 import Drone from "../homePage/Drone";
+import HeroPage from "../homePage/HeroPage";
+import Solution from "../homePage/Solution";
 
 export default function Home() {
   return (
@@ -22,16 +20,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TitleScreen />
-      {/* <Product /> */}
+      <HeroPage />
       <Drone />
-      {/* <Video /> */}
       <Specs />
-      <Problem />
-      {/* <BusinessModel /> */}
+      {/* <Problem /> */}
+      <Solution />
       <HowItWorks />
-      <ContactUsForm />
       <FAQ />
+      <ContactUs />
     </>
   );
 }

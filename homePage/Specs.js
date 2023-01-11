@@ -55,7 +55,7 @@ function Specs() {
   ];
 
   return (
-    <div className="h-[200vh] max-w-screen bg-gray-200">
+    <div className="h-[200vh] max-w-screen bg-gray-100">
       <div className="h-full flex flex-row">
         <div className="h-[200vh] w-1/3 flex flex-col">
           <div className="h-[100vh] flex flex-col px-14 text-left">
@@ -113,10 +113,13 @@ function Specs() {
           </div>
         </div>
 
-        <div className="bg-droneBlue h-full w-1/2 relative z-10">
-          <div className="mt-[17vh] sticky top-[17vh]">
-            <Image src={specsDrone} alt="drone specs" className={rotate} />
+        <div className="bg-droneBlue h-[200vh] w-1/2 relative z-10 flex flex-col">
+          <div className="h-[183vh]">
+            <div className="mt-[17vh] sticky top-[17vh]">
+              <Image src={specsDrone} alt="drone specs" className={rotate} />
+            </div>
           </div>
+          <div className="h-[17vh]"></div>
         </div>
         <div className="h-full w-1/6 flex flex-col">
           <div className="h-[100vh] w-full flex justify-center items-center">

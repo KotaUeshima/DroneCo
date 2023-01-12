@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import specsDrone from "../public/assets/specsDrone.png";
 
 function Specs() {
-  const [rotate, setRotate] = useState(`rotate-0`);
+  const droneRef = useRef();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // remove 2 * screen height from scrollY
-      let result = window.scrollY - 2 * window.innerHeight;
-      setRotate(`rotate-[${result}deg]`);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (event) => {
+  //     requestAnimationFrame(() => {
+  //       const rotation = (window.scrollY - 2 * window.innerHeight) / 14;
+  //       console.log(rotation);
+  //       droneRef.current.style.transform = `rotate(${rotation}deg)`;
+  //     });
+  //   });
+  // }, []);
 
   const specs = [
     {
@@ -116,7 +112,7 @@ function Specs() {
         <div className="bg-droneBlue h-[200vh] w-1/2 relative z-10 flex flex-col">
           <div className="h-[183vh]">
             <div className="mt-[17vh] sticky top-[17vh]">
-              <Image src={specsDrone} alt="drone specs" className={rotate} />
+              <Image ref={droneRef} src={specsDrone} alt="drone specs" />
             </div>
           </div>
           <div className="h-[17vh]"></div>

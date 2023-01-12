@@ -10,7 +10,7 @@ function IndividualFAQ({ question, answer }) {
         onClick={() => setOpen(!open)}
         className="cursor-pointer flow-root my-5 pb-4 border-b-2"
       >
-        <motion.h2 className="float-left text-xl font-medium">
+        <motion.h2 className="float-left text-xl font-light">
           {question}
         </motion.h2>
         <AiFillCaretDown

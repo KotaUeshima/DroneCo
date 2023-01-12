@@ -30,9 +30,9 @@ function FAQ() {
   ];
 
   return (
-    <div className="mt-20 mb-32 max-w-[75vw] mx-auto">
+    <div className="mt-20 mb-32 max-w-[80vw] mx-auto">
       <div className="w-full h-full flex flex-col ">
-        <h2 className="text-4xl font-medium text-fontBlack my-8">FAQs:</h2>
+        <h2 className="text-5xl font-light text-fontBlack my-8">FAQs:</h2>
         {FAQList.map(({ id, question, answer }) => {
           return <IndividualFAQ key={id} question={question} answer={answer} />;
         })}

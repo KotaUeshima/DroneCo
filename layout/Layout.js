@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BsExclamationSquareFill } from "react-icons/bs";
 import Footer from "./Footer.js";
 import NavBar from "./NavBar";
 

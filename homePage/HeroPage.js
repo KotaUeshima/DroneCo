@@ -18,7 +18,7 @@ function HeroPage() {
     });
   });
   return (
-    <div className="relative min-h-screen w-full bg-gray-50">
+    <div className="relative min-h-screen w-full bg-gray-100">
       <h2 className="absolute left-0 text-[40vh] text-white font-medium">
         Drone<span className="text-droneOrange">Co.</span>
       </h2>

@@ -19,26 +19,49 @@ function HowItWorks() {
     threshold: 0.5,
   });
 
-  let displayLeft = <h2 className="text-white">First Text</h2>;
+  let displayLeft = (
+    <div className="px-20">
+      <h2 className="text-white text-6xl font-thin">Place Order</h2>
+      <p className="mt-4 text-white tracking-widest font-light">
+        Its compact design allows for easy transportation, making it a popular
+        choice for both professional and amateur photographers and
+        videographers.
+      </p>
+    </div>
+  );
 
   if (inView2) {
     displayLeft = (
       <AnimatePresence>
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-white"
+          className="px-20"
         >
-          Second Text
-        </motion.h2>
+          <h2 className="text-white text-6xl font-thin">Wait For Order</h2>
+          <p className="mt-4 text-white tracking-widest font-light">
+            Its compact design allows for easy transportation, making it a
+            popular choice for both professional and amateur photographers and
+            videographers.
+          </p>
+        </motion.div>
       </AnimatePresence>
     );
   }
 
   if (inView3) {
-    displayLeft = <h2 className="text-white">Third Text</h2>;
+    displayLeft = (
+      <div className="px-20">
+        <h2 className="text-white text-6xl font-thin">Pick Up Delivery</h2>
+        <p className="mt-4 text-white tracking-widest font-light">
+          Its compact design allows for easy transportation, making it a popular
+          choice for both professional and amateur photographers and
+          videographers.
+        </p>
+      </div>
+    );
   }
 
   return (
@@ -52,11 +75,27 @@ function HowItWorks() {
           className={`h-full w-[40vw] bg-droneBlue float-left flex flex-col`}
         >
           <div className="h-[100vh] w-full flex justify-center items-center">
-            <h2 className="text-white">First Text</h2>
+            <div className="px-20">
+              <h2 className="text-white text-6xl font-thin">Place Order</h2>
+              <p className="mt-4 text-white tracking-widest font-light">
+                Its compact design allows for easy transportation, making it a
+                popular choice for both professional and amateur photographers
+                and videographers.
+              </p>
+            </div>
           </div>
           <div className="h-[100vh] w-full"></div>
           <div className="h-[100vh] w-full flex justify-center items-center">
-            <h2 className="text-white">Third Text</h2>
+            <div className="px-20">
+              <h2 className="text-white text-6xl font-thin">
+                Pick Up Delivery
+              </h2>
+              <p className="mt-4 text-white tracking-widest font-light">
+                Its compact design allows for easy transportation, making it a
+                popular choice for both professional and amateur photographers
+                and videographers.
+              </p>
+            </div>
           </div>
         </div>
       )}

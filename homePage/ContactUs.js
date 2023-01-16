@@ -8,7 +8,7 @@ function ContactUs() {
       <div className="absolute -z-10 top-0 h-[30vh] w-full bg-white"></div>
       <div className="absolute -z-10 bottom-0 h-[70vh] w-full bg-gray-100"></div>
 
-      <div className="mt-20 h-full w-[60vw] flex justify-center items-center">
+      <div className="mt-20 max-h-[75vh] w-[60vw] flex justify-center items-center">
         <form
           action="https://getform.io/f/dfe9a9e9-6b9c-433a-9867-96d178be9e94"
           method="POST"

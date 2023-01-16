@@ -4,6 +4,9 @@ import specsDrone from "../public/assets/specsDrone.png";
 
 function Specs() {
   const droneRef = useRef();
+  const [show, setShow] = useState(false);
+  const [show2, setShow2] = useState(false);
+  const [show3, setShow3] = useState(false);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", (event) => {
@@ -50,29 +53,27 @@ function Specs() {
     },
   ];
 
+  console.log(show);
   return (
     <div className="h-[200vh] max-w-screen bg-gray-100">
       <div className="h-full flex flex-row">
         <div className="h-[200vh] w-1/3 flex flex-col">
-          <div className="h-[100vh] flex flex-col px-14 text-left">
-            <h2 className="mt-20 text-4xl md:text-7xl text-droneOrange font-thin">
+          <div className="h-[100vh] space-y-16 flex flex-col justify-center px-14 text-left">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
               Efficiency.
             </h2>
-            <p className="mt-10 text-sm md:text-base text-fontBlack">
+            <p className="text-xs lg:text-base text-fontBlack">
               Drones, also known as unmanned aerial vehicles (UAVs), are
               becoming increasingly popular and efficient in a variety of
-              industries. One of the main advantages of using a drone is its
-              ability to reach areas that are otherwise difficult or dangerous
-              for humans to access.
+              industries.
             </p>
-            <h2 className="mt-20 text-4xl md:text-7xl text-droneOrange font-thin">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
               Precision.
             </h2>
-            <p className="mt-10 text-sm md:text-base text-fontBlack">
+            <p className="text-xs lg:text-base text-fontBlack">
               Drones are known for their precision in both navigation and
-              payload delivery. Their ability to fly autonomously, guided by
-              GPS, allows them to fly to specific coordinates with a high level
-              of accuracy.
+              payload delivery. Drones are known for their precision in both
+              navigation and payload delivery.
             </p>
           </div>
           <div className="h-[100vh] w-full flex flex-col">
@@ -86,7 +87,10 @@ function Specs() {
                 secondDescription,
               }) => {
                 return (
-                  <div key={id} className="h-1/5 m-10 flex flex-col">
+                  <div
+                    key={id}
+                    className="h-1/5 mt-6 mx-10 space-y-6 flex flex-col"
+                  >
                     <h2 className="mt-2 text-2xl tracking-widest">{title}</h2>
                     <div className="mt-2 flex flex-row">
                       <div className="flex flex-col w-1/2">
@@ -113,15 +117,57 @@ function Specs() {
           <div className="h-[183vh]">
             <div className="mt-[17vh] sticky top-[17vh]">
               <Image ref={droneRef} src={specsDrone} alt="drone specs" />
+              <div
+                onMouseOver={() => {
+                  setShow(true);
+                  setShow2(false);
+                  setShow3(false);
+                }}
+                className="absolute left-[20vh] top-[17vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+              >
+                <h2>1</h2>
+              </div>
+              <div
+                onMouseOver={() => {
+                  setShow(false);
+                  setShow2(true);
+                  setShow3(false);
+                }}
+                className="absolute left-[55vh] top-[37vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+              >
+                <h2>2</h2>
+              </div>
+              <div
+                onMouseOver={() => {
+                  setShow(false);
+                  setShow2(false);
+                  setShow3(true);
+                }}
+                className="absolute left-[45vh] top-[55vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+              >
+                <h2>3</h2>
+              </div>
             </div>
           </div>
           <div className="h-[17vh]"></div>
         </div>
         <div className="h-full w-1/6 flex flex-col">
           <div className="h-[100vh] w-full flex justify-center items-center">
-            <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
-              Model(X)
-            </h2>
+            {show && (
+              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
+                First
+              </h2>
+            )}
+            {show2 && (
+              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
+                Second
+              </h2>
+            )}
+            {show3 && (
+              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
+                Third
+              </h2>
+            )}
           </div>
           <div className="h-[100vh] w-full flex justify-center items-center">
             <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">

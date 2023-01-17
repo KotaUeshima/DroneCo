@@ -1,20 +1,23 @@
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import specsDrone from "../public/assets/specsDrone.png";
+import { useInView } from "react-intersection-observer";
 
 function Specs() {
   const droneRef = useRef();
-  const [show, setShow] = useState(false);
-  const [show2, setShow2] = useState(false);
-  const [show3, setShow3] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+  const [show, setShow] = useState(0);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", (event) => {
-  //     requestAnimationFrame(() => {
-  //       const rotation = (window.scrollY - 2 * window.innerHeight) / 14;
-  //       console.log(rotation);
-  //       droneRef.current.style.transform = `rotate(${rotation}deg)`;
-  //     });
+  //     if (inView) {
+  //       requestAnimationFrame(() => {
+  //         const rotation = (window.scrollY - 2.5 * window.innerHeight) / 18;
+  //         droneRef.current.style.transform = `rotate(${rotation}deg)`;
+  //       });
+  //     }
   //   });
   // }, []);
 
@@ -53,27 +56,29 @@ function Specs() {
     },
   ];
 
-  console.log(show);
   return (
     <div className="h-[200vh] max-w-screen bg-gray-100">
       <div className="h-full flex flex-row">
         <div className="h-[200vh] w-1/3 flex flex-col">
-          <div className="h-[100vh] space-y-16 flex flex-col justify-center px-14 text-left">
+          <div className="h-[100vh] space-y-6 lg:space-y-14 flex flex-col justify-center px-14 text-left">
             <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
-              Efficiency.
+              Autonomous.
             </h2>
             <p className="text-xs lg:text-base text-fontBlack">
-              Drones, also known as unmanned aerial vehicles (UAVs), are
-              becoming increasingly popular and efficient in a variety of
-              industries.
+              Our drones are programmed to fly to a specific location, deliver a
+              package, and return to their base. They use LiDAR, GPS, and
+              navigation-based sensors to perceive their environment, maintain
+              stability, and avoid obstacles. They utilize ML and computer
+              vision technologies to process the data and make navigation
+              decisions.
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
-              Precision.
+              Silent.
             </h2>
             <p className="text-xs lg:text-base text-fontBlack">
-              Drones are known for their precision in both navigation and
-              payload delivery. Drones are known for their precision in both
-              navigation and payload delivery.
+              Our drones utilize 8 low-noise lift propellers, which are
+              optimized for blade geometry and tip speed. This makes them ideal
+              for urban environments, non-disruptive, and regulatory compliant.
             </p>
           </div>
           <div className="h-[100vh] w-full flex flex-col">
@@ -118,34 +123,59 @@ function Specs() {
             <div className="mt-[17vh] sticky top-[17vh]">
               <Image ref={droneRef} src={specsDrone} alt="drone specs" />
               <div
-                onMouseOver={() => {
-                  setShow(true);
-                  setShow2(false);
-                  setShow3(false);
+                onMouseEnter={() => {
+                  setShow(1);
                 }}
-                className="absolute left-[20vh] top-[17vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+                onMouseLeave={() => {
+                  setShow(0);
+                }}
+                className="absolute left-[51%] top-[20%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
                 <h2>1</h2>
               </div>
               <div
-                onMouseOver={() => {
-                  setShow(false);
-                  setShow2(true);
-                  setShow3(false);
+                onMouseEnter={() => {
+                  setShow(2);
                 }}
-                className="absolute left-[55vh] top-[37vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+                onMouseLeave={() => {
+                  setShow(0);
+                }}
+                className="absolute left-[25%] top-[30%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
                 <h2>2</h2>
               </div>
               <div
-                onMouseOver={() => {
-                  setShow(false);
-                  setShow2(false);
-                  setShow3(true);
+                onMouseEnter={() => {
+                  setShow(3);
                 }}
-                className="absolute left-[45vh] top-[55vh] bg-blue-500 rounded-full h-10 w-10 flex justify-center items-center cursor-pointer"
+                onMouseLeave={() => {
+                  setShow(0);
+                }}
+                className="absolute left-[51%] top-[70%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
                 <h2>3</h2>
+              </div>
+              <div
+                onMouseEnter={() => {
+                  setShow(4);
+                }}
+                onMouseLeave={() => {
+                  setShow(0);
+                }}
+                className="absolute left-[36%] top-[7%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+              >
+                <h2>4</h2>
+              </div>
+              <div
+                onMouseEnter={() => {
+                  setShow(5);
+                }}
+                onMouseLeave={() => {
+                  setShow(0);
+                }}
+                className="absolute left-[51%] top-[60%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+              >
+                <h2>5</h2>
               </div>
             </div>
           </div>
@@ -153,23 +183,36 @@ function Specs() {
         </div>
         <div className="h-full w-1/6 flex flex-col">
           <div className="h-[100vh] w-full flex justify-center items-center">
-            {show && (
-              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
-                First
+            {show === 1 ? (
+              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
+                Downard and Navigation Sensors
               </h2>
-            )}
-            {show2 && (
-              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
-                Second
+            ) : null}
+            {show === 2 ? (
+              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
+                Front-Facing Propellers
               </h2>
-            )}
-            {show3 && (
-              <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
-                Third
+            ) : null}
+            {show === 3 ? (
+              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
+                Fixed-Wing Design with Foam Airframe
               </h2>
-            )}
+            ) : null}
+            {show === 4 ? (
+              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
+                Lift Propellers
+              </h2>
+            ) : null}
+            {show === 5 ? (
+              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
+                Tether-Based Release System
+              </h2>
+            ) : null}
           </div>
-          <div className="h-[100vh] w-full flex justify-center items-center">
+          <div
+            ref={ref}
+            className="h-[100vh] w-full flex justify-center items-center"
+          >
             <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
               Specs
             </h2>

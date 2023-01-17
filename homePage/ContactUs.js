@@ -4,7 +4,7 @@ import logo from "../public/assets/logo.png";
 
 function ContactUs() {
   return (
-    <div className="relative min-h-screen w-full flex flex-row">
+    <div name="bottom" className="relative min-h-screen w-full flex flex-row">
       <div className="absolute -z-10 top-0 h-[30vh] w-full bg-white"></div>
       <div className="absolute -z-10 bottom-0 h-[70vh] w-full bg-gray-100"></div>
 

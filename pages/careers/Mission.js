@@ -15,8 +15,7 @@ function Mission() {
       />
       <div className="w-[75vw] ml-[12.5vw] -mt-20 px-5 md:px-20 py-10 absolute bg-droneBlue rounded-md">
         <h2 className="text-sm md:text-lg lg:text-2xl text-white text-center">
-          Our Mission is to make access to goods as frictionless and universal
-          as access to information.
+          We’re elevating mobility, one drone at a time.
         </h2>
       </div>
     </div>

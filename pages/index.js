@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Problem from "../homePage/Problem";
 import FAQ from "../homePage/FAQ";
 import ContactUs from "../homePage/ContactUs";
 import HowItWorks from "../homePage/HowItWorks";
@@ -23,7 +22,6 @@ export default function Home() {
       <HeroPage />
       <Drone />
       <Specs />
-      {/* <Problem /> */}
       <Solution />
       <HowItWorks />
       <FAQ />

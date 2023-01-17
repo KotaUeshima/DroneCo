@@ -4,6 +4,7 @@ import { GrClose } from "react-icons/gr";
 import { FaLinkedin } from "react-icons/fa";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
+import { Link as Something } from "react-scroll";
 
 function Sidebar({ scrollUp }) {
   const [open, setOpen] = useState(false);
@@ -18,11 +19,11 @@ function Sidebar({ scrollUp }) {
       title: "Careers",
       link: "/careers",
     },
-    {
-      id: 3,
-      title: "Partner with Us",
-      link: "/",
-    },
+    // {
+    //   id: 3,
+    //   title: "Partner with Us",
+    //   link: "/",
+    // },
   ];
 
   const links = [
@@ -72,6 +73,14 @@ function Sidebar({ scrollUp }) {
             </Link>
           );
         })}
+        <Something to="bottom" smooth duration={1500}>
+          <h2
+            className="font-medium text-2xl mt-6 hover:text-droneOrange duration-300"
+            onClick={() => setOpen(!open)}
+          >
+            Partner With Us
+          </h2>
+        </Something>
         <div className="flex justify-center space-x-4 mt-6">
           {links.map(({ id, icon, link }) => {
             return (

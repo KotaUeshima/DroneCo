@@ -22,7 +22,7 @@ function HowItWorks() {
   let displayLeft = (
     <div className="px-20">
       <h2 className="text-white text-6xl font-thin">Place Order</h2>
-      <p className="mt-4 text-white tracking-widest font-light">
+      <p className="mt-4 paragraph text-white">
         Its compact design allows for easy transportation, making it a popular
         choice for both professional and amateur photographers and
         videographers.
@@ -41,7 +41,7 @@ function HowItWorks() {
           className="px-20"
         >
           <h2 className="text-white text-6xl font-thin">Wait For Order</h2>
-          <p className="mt-4 text-white tracking-widest font-light">
+          <p className="mt-4 paragraph text-white ">
             Its compact design allows for easy transportation, making it a
             popular choice for both professional and amateur photographers and
             videographers.
@@ -55,7 +55,7 @@ function HowItWorks() {
     displayLeft = (
       <div className="px-20">
         <h2 className="text-white text-6xl font-thin">Pick Up Delivery</h2>
-        <p className="mt-4 text-white tracking-widest font-light">
+        <p className="mt-4 paragraph text-white">
           Its compact design allows for easy transportation, making it a popular
           choice for both professional and amateur photographers and
           videographers.
@@ -77,7 +77,7 @@ function HowItWorks() {
           <div className="h-[100vh] w-full flex justify-center items-center">
             <div className="px-20">
               <h2 className="text-white text-6xl font-thin">Place Order</h2>
-              <p className="mt-4 text-white tracking-widest font-light">
+              <p className="mt-4 paragraph text-white">
                 Its compact design allows for easy transportation, making it a
                 popular choice for both professional and amateur photographers
                 and videographers.
@@ -90,7 +90,7 @@ function HowItWorks() {
               <h2 className="text-white text-6xl font-thin">
                 Pick Up Delivery
               </h2>
-              <p className="mt-4 text-white tracking-widest font-light">
+              <p className="mt-4 paragraph text-white">
                 Its compact design allows for easy transportation, making it a
                 popular choice for both professional and amateur photographers
                 and videographers.

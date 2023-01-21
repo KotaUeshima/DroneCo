@@ -9,3 +9,9 @@
     font-family: "Outfit", sans-serif;
   }
 }
+
+@layer components {
+  .paragraph {
+    @apply text-xs lg:text-lg font-thin text-droneBlue;
+  }
+}

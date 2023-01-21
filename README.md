@@ -13,3 +13,4 @@ This is a fronted web applications for a startup that focuses on creating drones
 - npm i react-intersection-observer --save
 - npm install react-scroll
 - npm i framer-motion
+- npm i typewriter-effect

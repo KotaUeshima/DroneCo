@@ -71,7 +71,7 @@ function ContactUs() {
         <h2 className="mt-12 text-4xl font-light text-center">
           Elevate your Business with DroneCo.
         </h2>
-        <p className="text-center text-gray-400">
+        <p className="text-center paragraph text-gray-400">
           Delivering services to meet your needs.
         </p>
       </div>

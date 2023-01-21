@@ -12,12 +12,10 @@ function Specs() {
 
   // useEffect(() => {
   //   window.addEventListener("scroll", (event) => {
-  //     if (inView) {
-  //       requestAnimationFrame(() => {
-  //         const rotation = (window.scrollY - 2.5 * window.innerHeight) / 18;
-  //         droneRef.current.style.transform = `rotate(${rotation}deg)`;
-  //       });
-  //     }
+  //     requestAnimationFrame(() => {
+  //       const rotation = (window.scrollY - 2.5 * window.innerHeight) / 18;
+  //       droneRef.current.style.transform = `rotate(${rotation}deg)`;
+  //     });
   //   });
   // }, []);
 
@@ -60,22 +58,20 @@ function Specs() {
     <div className="h-[200vh] max-w-screen bg-gray-100">
       <div className="h-full flex flex-row">
         <div className="h-[200vh] w-1/3 flex flex-col">
-          <div className="h-[100vh] space-y-6 lg:space-y-14 flex flex-col justify-center px-14 text-left">
+          <div className="h-[100vh] flex flex-col justify-center px-10 text-left">
             <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
               Autonomous.
             </h2>
-            <p className="text-xs lg:text-base text-fontBlack">
+            <p className="mt-5 paragraph">
               Our drones are programmed to fly to a specific location, deliver a
               package, and return to their base. They use LiDAR, GPS, and
               navigation-based sensors to perceive their environment, maintain
-              stability, and avoid obstacles. They utilize ML and computer
-              vision technologies to process the data and make navigation
-              decisions.
+              stability, and avoid obstacles.
             </p>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
+            <h2 className="mt-20 text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
               Silent.
             </h2>
-            <p className="text-xs lg:text-base text-fontBlack">
+            <p className="mt-5 paragraph">
               Our drones utilize 8 low-noise lift propellers, which are
               optimized for blade geometry and tip speed. This makes them ideal
               for urban environments, non-disruptive, and regulatory compliant.
@@ -102,13 +98,13 @@ function Specs() {
                         <h2 className="text-4xl text-droneOrange">
                           {firstData}
                         </h2>
-                        <h3 className="font-thin">{firstDescription}</h3>
+                        <p className="paragraph">{firstDescription}</p>
                       </div>
                       <div className="flex flex-col w-1/2">
                         <h2 className="text-4xl text-droneOrange">
                           {secondData}
                         </h2>
-                        <h3 className="font-thin">{secondDescription}</h3>
+                        <p className="paragraph">{secondDescription}</p>
                       </div>
                     </div>
                   </div>
@@ -129,9 +125,9 @@ function Specs() {
                 onMouseLeave={() => {
                   setShow(0);
                 }}
-                className="absolute left-[51%] top-[20%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className="absolute left-[51%] top-[20%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
-                <h2>1</h2>
+                <h2 className="">1</h2>
               </div>
               <div
                 onMouseEnter={() => {
@@ -140,9 +136,9 @@ function Specs() {
                 onMouseLeave={() => {
                   setShow(0);
                 }}
-                className="absolute left-[25%] top-[30%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className="absolute left-[25%] top-[30%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
-                <h2>2</h2>
+                <h2 className="">2</h2>
               </div>
               <div
                 onMouseEnter={() => {
@@ -151,9 +147,9 @@ function Specs() {
                 onMouseLeave={() => {
                   setShow(0);
                 }}
-                className="absolute left-[51%] top-[70%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className="absolute left-[51%] top-[70%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
-                <h2>3</h2>
+                <h2 className="">3</h2>
               </div>
               <div
                 onMouseEnter={() => {
@@ -162,9 +158,9 @@ function Specs() {
                 onMouseLeave={() => {
                   setShow(0);
                 }}
-                className="absolute left-[36%] top-[7%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className="absolute left-[36%] top-[7%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
-                <h2>4</h2>
+                <h2 className="">4</h2>
               </div>
               <div
                 onMouseEnter={() => {
@@ -173,9 +169,9 @@ function Specs() {
                 onMouseLeave={() => {
                   setShow(0);
                 }}
-                className="absolute left-[51%] top-[60%] bg-white border-2 border-droneOrange rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className="absolute left-[51%] top-[60%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
               >
-                <h2>5</h2>
+                <h2 className="">5</h2>
               </div>
             </div>
           </div>

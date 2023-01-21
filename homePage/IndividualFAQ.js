@@ -31,6 +31,7 @@ function IndividualFAQ({ question, answer }) {
               type: "spring",
             }}
             style={{ originX: 0 }}
+            className="paragraph"
           >
             {answer}
           </motion.p>

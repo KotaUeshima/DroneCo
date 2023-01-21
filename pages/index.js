@@ -6,6 +6,7 @@ import Specs from "../homePage/Specs";
 import Drone from "../homePage/Drone";
 import HeroPage from "../homePage/HeroPage";
 import Solution from "../homePage/Solution";
+import Customers from "../homePage/Customers";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Specs />
       <Solution />
       <HowItWorks />
+      <Customers />
       <FAQ />
       <ContactUs />
     </>

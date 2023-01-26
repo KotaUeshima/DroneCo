@@ -8,10 +8,22 @@
   html {
     font-family: "Outfit", sans-serif;
   }
+
+  body {
+    @apply overflow-x-hidden;
+  }
 }
 
 @layer components {
   .paragraph {
     @apply text-xs lg:text-lg font-thin text-droneBlue;
+  }
+
+  .header {
+    @apply font-extralight text-6xl;
+  }
+
+  .labelForDrone {
+    @apply text-white bg-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer;
   }
 }

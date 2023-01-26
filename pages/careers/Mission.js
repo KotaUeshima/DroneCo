@@ -14,7 +14,7 @@ function Mission() {
         className="h-[75vh] object-cover"
       />
       <div className="w-[75vw] ml-[12.5vw] -mt-20 px-5 md:px-20 py-10 absolute bg-droneBlue rounded-md">
-        <h2 className="text-sm md:text-lg lg:text-2xl text-white text-center">
+        <h2 className="font-extralight text-sm md:text-lg lg:text-2xl text-white text-center">
           We’re elevating mobility, one drone at a time.
         </h2>
       </div>

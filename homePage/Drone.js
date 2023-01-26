@@ -37,7 +37,8 @@ function Drone() {
               typewriter.typeString("Compact and Lightweight. (<2lbs)").start();
             }}
             options={{
-              wrapperClassName: "-mt-10 absolute right-10 paragraph",
+              wrapperClassName:
+                "-mt-10 absolute bottom-10 right-10 font-thin text-3xl bg-white p-4 rounded-md",
               cursorClassName: "hidden",
               delay: 100,
             }}
@@ -69,7 +70,8 @@ function Drone() {
               typewriter.typeString("Compact and Lightweight. (<5lbs)").start();
             }}
             options={{
-              wrapperClassName: "absolute left-6 md:left-10 paragraph",
+              wrapperClassName:
+                "absolute left-6 md:left-10 bottom-10 font-thin text-3xl bg-white p-4 rounded-md",
               cursorClassName: "hidden",
               delay: 100,
             }}

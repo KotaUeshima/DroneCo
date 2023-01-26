@@ -2,13 +2,16 @@ import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import specsDrone from "../public/assets/specsDrone.png";
 import { useInView } from "react-intersection-observer";
+import dronePropeller from "../public/assets/dronePropeller.png";
 
 function Specs() {
   const droneRef = useRef();
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.5,
   });
+
   const [show, setShow] = useState(0);
+  const [reveal, setReveal] = useState(false);
 
   // useEffect(() => {
   //   window.addEventListener("scroll", (event) => {
@@ -54,30 +57,35 @@ function Specs() {
     },
   ];
 
+  let title = "Downard and Navigation Sensors";
+  if (show === 1) title = "Downard and Navigation Sensors";
+  else if (show === 2) title = "Front-Facing Propellers";
+  else if (show === 3) title = "Fixed-Wing Design with Foam Airframe";
+  else if (show === 4) title = "Lift Propellers";
+  else if (show === 5) title = "Tether-Based Release System";
+
+  console.log(inView);
+
   return (
     <div className="h-[200vh] max-w-screen bg-gray-100">
       <div className="h-full flex flex-row">
         <div className="h-[200vh] w-1/3 flex flex-col">
           <div className="h-[100vh] flex flex-col justify-center px-10 text-left">
-            <h2 className="text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
-              Autonomous.
-            </h2>
+            <h2 className="header text-droneOrange">Autonomous.</h2>
             <p className="mt-5 paragraph">
               Our drones are programmed to fly to a specific location, deliver a
               package, and return to their base. They use LiDAR, GPS, and
               navigation-based sensors to perceive their environment, maintain
               stability, and avoid obstacles.
             </p>
-            <h2 className="mt-20 text-4xl md:text-5xl lg:text-7xl text-droneOrange font-thin">
-              Silent.
-            </h2>
+            <h2 className="mt-20 header text-droneOrange">Silent.</h2>
             <p className="mt-5 paragraph">
               Our drones utilize 8 low-noise lift propellers, which are
               optimized for blade geometry and tip speed. This makes them ideal
               for urban environments, non-disruptive, and regulatory compliant.
             </p>
           </div>
-          <div className="h-[100vh] w-full flex flex-col">
+          <div ref={ref} className="h-[100vh] w-full flex flex-col">
             {specs.map(
               ({
                 id,
@@ -117,61 +125,79 @@ function Specs() {
         <div className="bg-droneBlue h-[200vh] w-1/2 relative z-10 flex flex-col">
           <div className="h-[183vh]">
             <div className="mt-[17vh] sticky top-[17vh]">
-              <Image ref={droneRef} src={specsDrone} alt="drone specs" />
+              <Image
+                ref={droneRef}
+                src={specsDrone}
+                alt="drone specs"
+                className={`${
+                  inView ? "rotate-90" : "rotate-0"
+                } duration-[2000ms] ease-linear`}
+              />
               <div
-                onMouseEnter={() => {
-                  setShow(1);
-                }}
-                onMouseLeave={() => {
-                  setShow(0);
-                }}
-                className="absolute left-[51%] top-[20%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
+                className={`${
+                  inView ? "opacity-0" : "opacity-100"
+                } delay-1000 duration-700 ease-in-out`}
               >
-                <h2 className="">1</h2>
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setShow(2);
-                }}
-                onMouseLeave={() => {
-                  setShow(0);
-                }}
-                className="absolute left-[25%] top-[30%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
-              >
-                <h2 className="">2</h2>
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setShow(3);
-                }}
-                onMouseLeave={() => {
-                  setShow(0);
-                }}
-                className="absolute left-[51%] top-[70%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
-              >
-                <h2 className="">3</h2>
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setShow(4);
-                }}
-                onMouseLeave={() => {
-                  setShow(0);
-                }}
-                className="absolute left-[36%] top-[7%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
-              >
-                <h2 className="">4</h2>
-              </div>
-              <div
-                onMouseEnter={() => {
-                  setShow(5);
-                }}
-                onMouseLeave={() => {
-                  setShow(0);
-                }}
-                className="absolute left-[51%] top-[60%] bg-white border-2 border-droneOrange drop-shadow-xl rounded-full h-7 w-7 flex justify-center items-center cursor-pointer"
-              >
-                <h2 className="">5</h2>
+                <div
+                  onMouseEnter={() => {
+                    setShow(1);
+                    setReveal(true);
+                  }}
+                  onMouseLeave={() => {
+                    setReveal(false);
+                  }}
+                  className="absolute left-[51%] top-[20%] labelForDrone"
+                >
+                  <h2 className="">1</h2>
+                </div>
+                <div
+                  onMouseEnter={() => {
+                    setShow(2);
+                    setReveal(true);
+                  }}
+                  onMouseLeave={() => {
+                    setReveal(false);
+                  }}
+                  className="absolute left-[25%] top-[30%] labelForDrone"
+                >
+                  <h2 className="">2</h2>
+                </div>
+                <div
+                  onMouseEnter={() => {
+                    setShow(3);
+                    setReveal(true);
+                  }}
+                  onMouseLeave={() => {
+                    setReveal(false);
+                  }}
+                  className="absolute left-[51%] top-[70%] labelForDrone"
+                >
+                  <h2 className="">3</h2>
+                </div>
+                <div
+                  onMouseEnter={() => {
+                    setShow(4);
+                    setReveal(true);
+                  }}
+                  onMouseLeave={() => {
+                    setReveal(false);
+                  }}
+                  className="absolute left-[36%] top-[7%] labelForDrone"
+                >
+                  <h2 className="">4</h2>
+                </div>
+                <div
+                  onMouseEnter={() => {
+                    setShow(5);
+                    setReveal(true);
+                  }}
+                  onMouseLeave={() => {
+                    setReveal(false);
+                  }}
+                  className="absolute left-[51%] top-[60%] labelForDrone"
+                >
+                  <h2 className="">5</h2>
+                </div>
               </div>
             </div>
           </div>
@@ -179,36 +205,28 @@ function Specs() {
         </div>
         <div className="h-full w-1/6 flex flex-col">
           <div className="h-[100vh] w-full flex justify-center items-center">
-            {show === 1 ? (
-              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
-                Downard and Navigation Sensors
-              </h2>
-            ) : null}
-            {show === 2 ? (
-              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
-                Front-Facing Propellers
-              </h2>
-            ) : null}
-            {show === 3 ? (
-              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
-                Fixed-Wing Design with Foam Airframe
-              </h2>
-            ) : null}
-            {show === 4 ? (
-              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
-                Lift Propellers
-              </h2>
-            ) : null}
-            {show === 5 ? (
-              <h2 className="relative z-10 font-thin text-4xl bg-white text-center">
-                Tether-Based Release System
-              </h2>
-            ) : null}
+            <div
+              className={`${
+                reveal ? "-translate-x-[10%]" : "translate-x-[110%]"
+              } relative z-10 flex flex-col items-center space-y-4 bg-white drop-shadow-xl rounded-md p-4 delay-75 duration-700`}
+            >
+              <div className="relative h-[20vh] w-2/3">
+                <Image
+                  src={dronePropeller}
+                  alt="drone propeller"
+                  fill={true}
+                  className="object-contain"
+                />
+              </div>
+              <h2 className="text-center font-thin text-3xl">{title}</h2>
+              <hr className="h-[2px] w-2/3 bg-droneBlue" />
+              <p className="text-center paragraph">
+                Navigation sensors are essential for Drone navigation through
+                city terrain.
+              </p>
+            </div>
           </div>
-          <div
-            ref={ref}
-            className="h-[100vh] w-full flex justify-center items-center"
-          >
+          <div className="h-[100vh] w-full flex justify-center items-center">
             <h2 className="rotate-90 font-thin border-b-4 border-droneOrange text-7xl">
               Specs
             </h2>

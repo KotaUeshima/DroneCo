@@ -31,7 +31,7 @@ function JoinTeam() {
     <div className="my-20 min-h-screen w-full">
       <div className="relative flex flex-row">
         <div className="mt-[10vh] ml-[10vw] flex flex-col">
-          <h2 className="text-4xl">
+          <h2 className="header">
             Join Our <span className="text-droneOrange">Team</span>
           </h2>
           <div className="z-10 mt-20 flex flex-col space-y-10">
@@ -43,10 +43,10 @@ function JoinTeam() {
                 >
                   <div className="flex flex-row">
                     <div>
-                      <h2 className="text-xl">{`${title} | ${status}`}</h2>
-                      <p className="mt-2 text-sm">{description}</p>
+                      <h2 className="font-light text-2xl">{`${title} | ${status}`}</h2>
+                      <p className="mt-2 paragraph text-white">{description}</p>
                     </div>
-                    <button className="bg-droneOrange text-sm mt-4 ml-20 px-6 py-0 rounded-md">
+                    <button className="bg-droneOrange paragraph text-white mt-4 ml-20 px-6 py-0 rounded-md">
                       Apply Now
                     </button>
                   </div>

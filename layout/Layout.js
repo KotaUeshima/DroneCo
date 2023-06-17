@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react";
-import Footer from "./Footer.js";
-import NavBar from "./NavBar";
+import React, { useEffect, useState } from 'react'
+import Footer from './Footer.js'
+import NavBar from './NavBar'
 
 function Layout({ children }) {
-  const [scrollUp, setScrollUp] = useState(true);
-  const [topOfPage, setTopOfPage] = useState(true);
-  let lastScroll = 0;
+  const [scrollUp, setScrollUp] = useState(true)
+  const [topOfPage, setTopOfPage] = useState(true)
+  let lastScroll = 0
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      let currentScroll = window.pageYOffset;
+    window.addEventListener('scroll', () => {
+      let currentScroll = window.pageYOffset
       // further down the page you go higher the number
 
       if (lastScroll === 0) {
       } else if (currentScroll > lastScroll && scrollUp) {
-        setScrollUp(false);
+        setScrollUp(false)
       } else if (currentScroll < lastScroll && !scrollUp) {
-        setScrollUp(true);
+        setScrollUp(true)
       }
 
       if (currentScroll === 0 && !topOfPage) {
-        setTopOfPage(true);
+        setTopOfPage(true)
       } else if (currentScroll !== 0 && topOfPage) {
-        setTopOfPage(false);
+        setTopOfPage(false)
       }
 
-      lastScroll = currentScroll;
-    });
-  });
+      lastScroll = currentScroll
+    })
+  })
   return (
     <div>
       <NavBar scrollUp={scrollUp} topOfPage={topOfPage} />
       <main>{children}</main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
